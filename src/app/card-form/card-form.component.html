@@ -1,0 +1,166 @@
+<div class="columns">
+    <div class="column">
+        <app-card 
+        [name]="cardForm.get('name')!.value"
+        [cardNumber]="cardForm.get('cardNumber')!.value"
+        [expiration]="cardForm.get('expiration')!.value"
+        >
+        </app-card>
+    </div>
+
+    <div class="column">
+        <form action="" [formGroup]="cardForm" (ngSubmit)="onSubmit()">
+            <div class="field">
+                <label for="" class="label">Name</label>
+                <div class="control">
+                    <input 
+                    [ngClass]="{ 'is-danger': cardForm.controls.name.dirty &&
+                    cardForm.controls.name.touched &&
+                    cardForm.controls.name.errors }"
+                    class="input" type="text" formControlName="name">
+                </div>
+                <ng-container 
+                *ngIf="
+                cardForm.controls.name.dirty &&
+                cardForm.controls.name.touched &&
+                cardForm.controls.name.errors
+                ">
+                    <div class="help is-danger" *ngIf="cardForm.controls.name.errors.required">
+                        Value is required
+                    </div>
+                    <div class="help is-danger" *ngIf="cardForm.controls.name.errors.minlength">
+                        Vlaue you entered is 
+                        {{ cardForm.controls.name.errors.minlength.actualLength }}
+                        characters long, but it must be at laest
+                        {{ cardForm.controls.name.errors.minlength.requiredLength }}
+                        characters
+                    </div>
+                    <div class="help is-danger" *ngIf="cardForm.controls.name.errors.maxlength">
+                        Vlaue you entered is 
+                        {{ cardForm.controls.name.errors.maxlength.actualLength }}
+                        characters long, but it can not be longer than
+                        {{ cardForm.controls.name.errors.maxlength.requiredLength }}
+                        characters
+                    </div>
+                </ng-container>
+            </div>
+
+            <div class="field">
+                <label for="" class="label">Card Number</label>
+                <div class="control">
+                    <input 
+                    [ngClass]="{ 'is-danger': cardForm.controls.cardNumber.dirty &&
+                    cardForm.controls.cardNumber.touched &&
+                    cardForm.controls.cardNumber.errors }"
+                    class="input" type="text" formControlName="cardNumber">
+                </div>
+                <ng-container 
+                *ngIf="
+                cardForm.controls.cardNumber.dirty &&
+                cardForm.controls.cardNumber.touched &&
+                cardForm.controls.cardNumber.errors
+                ">
+                    <div class="help is-danger" *ngIf="cardForm.controls.cardNumber.errors.required">
+                        Value is required
+                    </div>
+                    <div class="help is-danger" *ngIf="cardForm.controls.cardNumber.errors.minlength">
+                        Vlaue you entered is 
+                        {{ cardForm.controls.cardNumber.errors.minlength.actualLength }}
+                        characters long, but it must be at laest
+                        {{ cardForm.controls.cardNumber.errors.minlength.requiredLength }}
+                        characters
+                    </div>
+                    <div class="help is-danger" *ngIf="cardForm.controls.cardNumber.errors.maxlength">
+                        Vlaue you entered is 
+                        {{ cardForm.controls.cardNumber.errors.maxlength.actualLength }}
+                        characters long, but it can not be longer than
+                        {{ cardForm.controls.cardNumber.errors.maxlength.requiredLength }}
+                        characters
+                    </div>
+                </ng-container>
+            </div>
+        <div class="columns">
+            <div class="column">
+                <div class="field">
+                    <label for="" class="label">Expiration</label>
+                    <div class="control">
+                        <input 
+                        [ngClass]="{ 'is-danger': cardForm.controls.expiration.dirty &&
+                        cardForm.controls.expiration.touched &&
+                        cardForm.controls.expiration.errors }"
+                        class="input" type="text" formControlName="expiration">
+                    </div>
+                    <ng-container 
+                    *ngIf="
+                    cardForm.controls.expiration.dirty &&
+                    cardForm.controls.expiration.touched &&
+                    cardForm.controls.expiration.errors
+                    ">
+                        <div class="help is-danger" *ngIf="cardForm.controls.expiration.errors.required">
+                            Value is required
+                        </div>
+                        <div class="help is-danger" *ngIf="cardForm.controls.expiration.errors.minlength">
+                            Vlaue you entered is 
+                            {{ cardForm.controls.expiration.errors.minlength.actualLength }}
+                            characters long, but it must be at laest
+                            {{ cardForm.controls.expiration.errors.minlength.requiredLength }}
+                            characters
+                        </div>
+                        <div class="help is-danger" *ngIf="cardForm.controls.expiration.errors.maxlength">
+                            Vlaue you entered is 
+                            {{ cardForm.controls.expiration.errors.maxlength.actualLength }}
+                            characters long, but it can not be longer than
+                            {{ cardForm.controls.expiration.errors.maxlength.requiredLength }}
+                            characters
+                        </div>
+                        <div class="help is-danger" *ngIf="cardForm.controls.expiration.errors.pattern">
+                            Invalid format
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+
+            <div class="column">    
+                <div class="field">
+                    <label for="" class="label">Security Code</label>
+                    <div class="control">
+                        <input 
+                        [ngClass]="{ 'is-danger': cardForm.controls.securityCode.dirty &&
+                        cardForm.controls.securityCode.touched &&
+                        cardForm.controls.securityCode.errors }"
+                        class="input" type="text" formControlName="securityCode">
+                    </div>
+                    <ng-container 
+                    *ngIf="
+                    cardForm.controls.securityCode.dirty &&
+                    cardForm.controls.securityCode.touched &&
+                    cardForm.controls.securityCode.errors
+                    ">
+                        <div class="help is-danger" *ngIf="cardForm.controls.securityCode.errors.required">
+                            Value is required
+                        </div>
+                        <div class="help is-danger" *ngIf="cardForm.controls.securityCode.errors.minlength">
+                            Vlaue you entered is 
+                            {{ cardForm.controls.securityCode.errors.minlength.actualLength }}
+                            characters long, but it must be at laest
+                            {{ cardForm.controls.securityCode.errors.minlength.requiredLength }}
+                            characters
+                        </div>
+                        <div class="help is-danger" *ngIf="cardForm.controls.securityCode.errors.maxlength">
+                            Vlaue you entered is 
+                            {{ cardForm.controls.securityCode.errors.maxlength.actualLength }}
+                            characters long, but it can not be longer than
+                            {{ cardForm.controls.securityCode.errors.maxlength.requiredLength }}
+                            characters
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="button is-primary" type="submit" [disabled]="cardForm.invalid">Submit</button>
+            <button class="button is-warning" (click)="onResetClick()">Reset</button>
+        </div>
+        </form>
+    </div>
+</div>
